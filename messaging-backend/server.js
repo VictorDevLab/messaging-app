@@ -21,7 +21,7 @@ app.use(Cors())
 mongoose.connect(connection_url)
 //api Endpoints
 const db = mongoose.connection
-db.once("open", () => {
+db.once("open", () => { 
     console.log("DB Connected")
     const msgCollection = db.collection("messagingmessages")
     const changeStream = msgCollection.watch()
@@ -39,7 +39,7 @@ db.once("open", () => {
         }
 }) })
 app.get('/', (req, res) => {
-  res.send('Hello World!')
+  res.send('Hello World!') 
 })
 app.post('/messages/new', (req, res) => {
   const dbMessage = req.body;
